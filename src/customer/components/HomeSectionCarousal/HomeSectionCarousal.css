@@ -1,0 +1,10 @@
+/* HomeSectionCarousal.css */
+.slide-container {
+    display: flex;
+    transition: transform 0.3s ease; /* Same transition as in JavaScript */
+  }
+  
+  .slide-item {
+    flex: 0 0 33.33%; /* Adjust the width based on the number of items displayed */
+  }
+  
