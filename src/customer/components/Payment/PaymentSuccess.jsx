@@ -18,7 +18,6 @@ const PaymentSuccess = () => {
 
     const dispatch =useDispatch();
     const {order} = useSelector(store=>store);
-    const word = order.order?.orderItems[0].product.color;
     //console.log("orderItns :",order.order?.orderItems[0].product.color);
 
     useEffect(()=>{
@@ -61,14 +60,14 @@ const PaymentSuccess = () => {
                     <div className='flex items-center'>
                         <img className='w-[5rem] h-[5rem] object-cover object-top' src = {item.product.imageUrl} alt="" />
 
-                        <div>
-                            <p>{item.product.title}</p>
+                        <div className='ml-5 font-semibold'>
+                            <p className='font-semibold'>{item.product.title}</p>
                             <div>
-                                <span>Color: {_.capitalize(word)}, </span>
+                                <span>Color: {_.capitalize(item.product.color)}, </span>
                                 <span>Size: {item.size}</span>
                             </div>
                             <p>Seller: {item.product.brand}</p>
-                            <p>₹{item.price}</p>
+                            <p>₹{item.discountedPrice}</p>
 
 
                         </div>

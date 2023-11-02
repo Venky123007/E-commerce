@@ -92,7 +92,7 @@ export default function ProductDetails() {
   const params = useParams();
   const dispatch = useDispatch();
   const {products} = useSelector(store=>store);
-  console.log("kaavalsina products : ", products);
+  console.log(" products : ", products);
 
   console.log("---- : ", params.productId );
 

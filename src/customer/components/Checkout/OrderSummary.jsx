@@ -4,7 +4,7 @@ import { Button } from '@mui/material'
 import CartItem from '../Cart/CartItem'
 import { useDispatch, useSelector } from 'react-redux'
 import { getOrderById } from '../../../State/Order/Action'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { createPayment } from '../../../State/Payment/Action'
 
 const OrderSummary = () => {
@@ -14,6 +14,7 @@ const OrderSummary = () => {
     const {order} = useSelector(store=>store);
     const searchParams = new URLSearchParams(location.search);
     const orderId = searchParams.get("order_id");
+    const navigate = useNavigate();
 
     useEffect(()=>{
         dispatch(getOrderById(orderId))
@@ -21,7 +22,8 @@ const OrderSummary = () => {
 
     const handleCheckout = ()=>{
         console.log("orderId :", orderId);
-        dispatch(createPayment(orderId));
+        const reqData = {orderId,navigate}
+        dispatch(createPayment(reqData));
     }
 
   return (
