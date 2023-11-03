@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export const API_BASE_URL = "hissing-wren-production.up.railway.app/"
+export const API_BASE_URL = "https://hissing-wren-production.up.railway.app/"
 
 const jwt = localStorage.getItem("jwt");
 
