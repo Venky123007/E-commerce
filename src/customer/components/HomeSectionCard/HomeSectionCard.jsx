@@ -9,7 +9,7 @@ const HomeSectionCard = ({ product }) => {
 
   const handleProduct = () => {
     //navigate(`/${product.topLavelCategory}/${product.secondLavelCategory}/${product.thirdLavelCategory}`)
-    navigate(`/product/69`)
+    navigate(`/product/9`)
   }
 
   return (
