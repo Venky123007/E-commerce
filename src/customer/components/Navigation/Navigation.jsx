@@ -368,19 +368,19 @@ export default function Navigation() {
                 <div className="space-y-6 border-t border-gray-200 px-4 py-6">
                   <div className="flow-root">
                     <a
-                      href="#"
-                      className="-m-2 block p-2 font-medium text-gray-900"
+                      onClick={handleOpen}
+                      className="-m-2 block p-2 font-medium text-gray-700 hover:text-gray-900"
                     >
-                      Sign in
+                      Connect
                     </a>
                   </div>
                   <div className="flow-root">
-                    <a
-                      href="#"
-                      className="-m-2 block p-2 font-medium text-gray-900"
+                  <Button
+                      onClick={handleOpen}
+                      className="-m-2 block p-2 font-medium text-gray-700 hover:text-gray-900"
                     >
-                      Create account
-                    </a>
+                      Register
+                    </Button>
                   </div>
                 </div>
 
