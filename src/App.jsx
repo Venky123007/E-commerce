@@ -10,6 +10,8 @@ import Product from './customer/components/Product/Product'
 import ProductDetails from './customer/components/ProductDetails/ProductDetails'
 import HomePage from './customer/pages/HomePage/HomePage'
 import CustomerRoute from './Routers/CustomerRoute'
+import AdminRouter from './Routers/AdminRouter'
+
 
 function App() {
 
@@ -17,7 +19,8 @@ function App() {
    <div className = "">
 
     <Routes>
-      <Route path='*' element={<CustomerRoute/>}></Route>
+      <Route path='/*' element={<CustomerRoute/>}></Route>
+      <Route path='/admin/*' element={<AdminRouter/>}></Route>
     </Routes>
 
    </div>

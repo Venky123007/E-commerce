@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, useSearchParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { getOrderById } from '../../../State/Order/Action';
-import { updatePayment } from '../../../State/Payment/Action';
-import { Alert, AlertTitle, Grid } from '@mui/material';
+import { createPayment, updatePayment } from '../../../State/Payment/Action';
+import { Alert, AlertTitle, Button, Grid } from '@mui/material';
 import OrderTracker from '../Order/OrderTracker';
 import _ from 'lodash';
 import AddressCard from '../AddressCard/AddressCard';
@@ -13,6 +13,7 @@ const PaymentSuccess = () => {
     const [referenceId, setReferenceId] = useState();
     const [paymentStatus, setPaymentStatus] = useState();
     const {orderId} = useParams();
+    const navigate = useNavigate();
 
     
 
@@ -33,6 +34,12 @@ const PaymentSuccess = () => {
         dispatch(updatePayment(data))
 
     },[orderId, paymentId])
+
+    const handleCheckout = ()=>{
+        console.log("orderId :", orderId);
+        const reqData = {orderId,navigate}
+        dispatch(createPayment(reqData));
+    }
     
 
   return (
@@ -44,8 +51,8 @@ const PaymentSuccess = () => {
             severity='success'
             sx={{mb:6, width:"fit-content"}}
             >
-                <AlertTitle>Payment Success</AlertTitle>
-                Congratulation Your Order got Placed...!
+                <AlertTitle>Congratulations 🎉🎊</AlertTitle>
+                 Your Order got placed successfully...!
             </Alert>
 
         </div>
@@ -81,6 +88,9 @@ const PaymentSuccess = () => {
             </Grid>)}
 
         </Grid>
+        <Button variant="contained" className='w-full mt-5' sx={{ px: "2.5rem", py: ".7rem", bgcolor: "#9155fd" }} onClick={handleCheckout}>
+                        Payment
+                    </Button>
         
     </div>
   )

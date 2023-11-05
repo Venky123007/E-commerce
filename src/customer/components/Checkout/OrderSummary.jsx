@@ -21,9 +21,10 @@ const OrderSummary = () => {
     },[orderId]);
 
     const handleCheckout = ()=>{
-        console.log("orderId :", orderId);
-        const reqData = {orderId,navigate}
-        dispatch(createPayment(reqData));
+        // console.log("orderId :", orderId);
+        // const reqData = {orderId,navigate}
+        // dispatch(createPayment(reqData));
+        navigate(`/payment/${orderId}`);
     }
 
   return (
@@ -67,7 +68,7 @@ const OrderSummary = () => {
                         </div>
                     </div>
                     <Button variant="contained" className='w-full mt-5' sx={{ px: "2.5rem", py: ".7rem", bgcolor: "#9155fd" }} onClick={handleCheckout}>
-                        Checkout
+                        Place Order
                     </Button>
                 </div>
             </div>
