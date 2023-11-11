@@ -1,8 +1,9 @@
-import { Button, Grid, TextField } from '@mui/material'
+import { Button, Grid, IconButton, InputAdornment, TextField } from '@mui/material'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Navigate, useNavigate } from 'react-router-dom'
 import { getUser, login } from '../../State/Auth/Action'
+import { Visibility, VisibilityOff } from '@mui/icons-material'
 
 const LoginForm = () => {
     const dispatch = useDispatch();
@@ -29,6 +30,29 @@ const LoginForm = () => {
         dispatch(login(userData))
         console.log("userDate", userData);
     }
+
+    const [values, setValues] = React.useState({
+        password: "",
+        showPassword: false,
+    });
+ 
+    const handleClickShowPassword = () => {
+        setValues({
+            ...values,
+            showPassword: !values.showPassword,
+        });
+    };
+ 
+    const handleMouseDownPassword = (event) => {
+        event.preventDefault();
+    };
+ 
+    const handlePasswordChange = (prop) => (event) => {
+        setValues({
+            ...values,
+            [prop]: event.target.value,
+        });
+    };
   return (
     <div>
         <form onSubmit={handleSubmit}>
