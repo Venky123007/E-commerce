@@ -1,8 +1,9 @@
-import { Button, Grid, TextField } from '@mui/material'
+import { Button, Grid, IconButton, Input, InputAdornment, TextField } from '@mui/material'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
 import { getUser, register } from '../../State/Auth/Action';
+import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 const RegisterForm = () => {
 
@@ -35,6 +36,29 @@ const RegisterForm = () => {
         dispatch(register(userData))
         console.log("userDate", userData);
     }
+
+    const [values, setValues] = React.useState({
+        password: "",
+        showPassword: false,
+    });
+ 
+    const handleClickShowPassword = () => {
+        setValues({
+            ...values,
+            showPassword: !values.showPassword,
+        });
+    };
+ 
+    const handleMouseDownPassword = (event) => {
+        event.preventDefault();
+    };
+ 
+    const handlePasswordChange = (prop) => (event) => {
+        setValues({
+            ...values,
+            [prop]: event.target.value,
+        });
+    };
   return (
     <div>
         <form onSubmit={handleSubmit}>
@@ -80,6 +104,25 @@ const RegisterForm = () => {
                     label='Password'
                     fullWidth
                     autoComplete='password'
+                    type={
+                        values.showPassword
+                            ? "text"
+                            : "password"
+                    }
+                    onChange={handlePasswordChange("password")}
+                    value={values.password}
+                    InputProps={{
+                        endAdornment: (
+                            <InputAdornment position="end">
+                                <IconButton
+                                    onClick={handleClickShowPassword}
+                                    onMouseDown={handleMouseDownPassword}
+                                >
+                                    {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                                </IconButton>
+                            </InputAdornment>
+                        ),
+                    }}
                     />
                 </Grid>
 

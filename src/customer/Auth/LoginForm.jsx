@@ -46,13 +46,32 @@ const LoginForm = () => {
                 </Grid>
 
                 <Grid item xs={12}>
-                    <TextField 
+                <TextField 
                     required
                     id='password'
                     name='password'
                     label='Password'
                     fullWidth
                     autoComplete='password'
+                    type={
+                        values.showPassword
+                            ? "text"
+                            : "password"
+                    }
+                    onChange={handlePasswordChange("password")}
+                    value={values.password}
+                    InputProps={{
+                        endAdornment: (
+                            <InputAdornment position="end">
+                                <IconButton
+                                    onClick={handleClickShowPassword}
+                                    onMouseDown={handleMouseDownPassword}
+                                >
+                                    {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                                </IconButton>
+                            </InputAdornment>
+                        ),
+                    }}
                     />
                 </Grid>
 
