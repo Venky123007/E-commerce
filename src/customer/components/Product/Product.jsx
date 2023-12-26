@@ -75,7 +75,7 @@ export default function Product() {
   const navigate = useNavigate();
   const param = useParams();
   const dispatch = useDispatch();
-  // const {products} = useSelector(store=>store);
+  const {products} = useSelector(store=>store);
 
   const decodedQueryString = decodeURIComponent(location.search);
   const searchParams = new URLSearchParams(decodedQueryString);
@@ -448,10 +448,10 @@ export default function Product() {
               {/* Product grid */}
               <div className="lg:col-span-6 w-full">
                         <div className='flex flex-wrap justify-center bg-white py-5'>
-                            {/* {products.products && products.products?.content?.map((item, index)=><ProductCard key={index} product={item}/>)} */}
-                            {
+                            {products.products && products.products?.content?.map((item, index)=><ProductCard key={index} product={item}/>)}
+                            {/* {
                               products.map((item, index) => <ProductCard key={index} product={item}/>)
-                            }
+                            } */}
                         </div>
               </div>
             </div>
