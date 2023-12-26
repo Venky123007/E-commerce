@@ -1,32 +1,22 @@
 export const cart = [
   {
-    imageUrl:
-      "https://img3.junaroad.com/uiproducts/20508616/zoom_0-1700053790.jpg",
-    brand: "Rope",
-    title: "Men Solid Maroon Cotton Short Kurta",
-    color: "Maroon",
-    discountedPrice: 449,
-    price: 1499,
-    discountPercent: 70,
-    size: [
-      {
-        name: "S",
-        quantity: 20,
+    cart: {
+      totalItems: 2,
+      totalPrice: 2000,
+      discount: 50,
+      totalDiscountedPrice: 1000,
+      product: {
+        color: "Yellow",
+        imageUrl:
+          "https://img3.junaroad.com/uiproducts/20015812/zoom_0-1688047988.jpg",
+        title: "Notched Neck Solid Short Kurta",
+        size: "M",
+        brand: "Bene Kleed",
+        discountedPrice: 76,
+        price: 2099,
+        discount: 76,
       },
-      {
-        name: "M",
-        quantity: 30,
-      },
-      {
-        name: "L",
-        quantity: 50,
-      },
-    ],
-    quantity: 100,
-    topLevelCategory: "men",
-    secondLevelCategory: "clothing",
-    thirdLevelCategory: "mens_kurta",
-    description:
-      " Look cool wearing this Men Kurta from the house of Rope. Made from premium cotton, this kurta will stay extremely soft against your skin. Featuring a smooth finish and attractive Hood and Pockets.",
+      quantity: 1,
+    },
   },
 ];

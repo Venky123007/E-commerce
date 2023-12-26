@@ -154,8 +154,10 @@ export default function ProductDetails() {
           <div className="flex flex-col items-center">
             <div className="overflow-hidden rounded-lg max-w-[30rem] max-h-[35rem]">
               <img
-                src={products.product?.imageUrl}
-                alt={product.images[0].alt}
+                // src={products.product?.imageUrl}
+                src = "https://img3.junaroad.com/uiproducts/20015812/zoom_0-1688047988.jpg"
+                // alt={product.images[0].alt}
+                alt=""
                 className="h-full w-full object-cover object-center"
               />
             </div>
