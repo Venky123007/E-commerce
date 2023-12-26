@@ -62,7 +62,7 @@ export const products = [
 
   {
     imageUrl:
-      "https://img3.junaroad.com/uiproducts/16906012/zoom_0-1580734050.jpg",
+      "https://img3.junaroad.com/uiproducts/20015812/zoom_0-1688047988.jpg",
     brand: "Bene Kleed",
     title: "Notched Neck Solid Short Kurta",
     color: "yellow",
