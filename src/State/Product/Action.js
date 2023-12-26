@@ -3,13 +3,14 @@ import { CREATE_PRODUCT_FAILURE, CREATE_PRODUCT_REQUEST, CREATE_PRODUCT_SUCCESS,
 
 export const findProducts = (reqData) => async (dispatch) => {
 
+    //console.log("dispatch : ", reqData);
     dispatch({type:FIND_PRODUCTS_REQUEST})
     const {category, colors, sizes, minPrice, maxPrice, minDiscount, sort, pageNumber, pageSize, stock} = reqData;
-    console.log("reqData : ", reqData);
+    console.log("reqDataaa : ", reqData);
     //console.log("category : ", category,"colors :", colors, "sizes : ", sizes, "minPrice : ",minPrice, "maxPrice : ", minPrice, "sort :", sort, "pageNumber :", pageNumber, "pageSize :", pageSize, "stock : ",stock);
     try{
         const {data} = await api.get(`/api/products?color=${colors}&size=${sizes}&minPrice=${minPrice}&maxPrice=${maxPrice}&minDiscount=${minDiscount}&category=${category}&stock=${stock}&sort=${sort}&pageNumber=${pageNumber}&pageSize=${pageSize}`)
-        console.log("product data : ", data);
+        console.log("product dataaa : ", data);
         dispatch({type:FIND_PRODUCTS_SUCCESS, payload:data})
     }catch(error) {
         dispatch({type:FIND_PRODUCTS_FAILURE, payload:error.message})
