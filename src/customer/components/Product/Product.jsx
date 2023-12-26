@@ -11,7 +11,7 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { findProducts } from '../../../State/Product/Action'
-import { products } from './Products'
+// import { products } from './Products'
 
 const sortOptions = [
   { name: 'Most Popular', href: '#', current: true },
