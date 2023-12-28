@@ -178,10 +178,12 @@ export default function ProductDetails() {
           <div className="lg:col-span-1 mx-auto max-w-2xl px-4 pb-16 sm:px-6 lg:max-w-7xl lg:px-8 lg:pb-24">
             <div className="lg:col-span-2 ">
               <h1 className="text-lg lg:text-xl font-semibold text-gray-900">
-                {products.product?.brand}
+                {/* {products.product?.brand} */}
+                Bene Kleed
               </h1>
               <h1 className="text-lg lg:text-xl text-gray-900 opacity-60 pt-1">
-              {products.product?.title}
+              {/* {products.product?.title} */}
+              Notched Neck Solid Short Kurta
               </h1>
             </div>
 
@@ -190,9 +192,12 @@ export default function ProductDetails() {
               <h2 className="sr-only">Product information</h2>
 
               <div className="flex space-x-5 items-center text-lg lg:text-xl text-gray-900 mt-6">
-                <p className="font-semibold">₹{products.product?.discountedPrice}</p>
-                <p className="opacity-50 line-through">₹{products.product?.price}</p>
-                <p className="text-green-500 font-semibold">{products.product?.discountPercent}% Off</p>
+                {/* <p className="font-semibold">₹{products.product?.discountedPrice}</p> */}
+                <p className="font-semibold">₹499</p>
+                {/* <p className="opacity-50 line-through">₹{products.product?.price}</p> */}
+                <p className="opacity-50 line-through">₹2099</p>
+                {/* <p className="text-green-500 font-semibold">{products.product?.discountPercent}% Off</p> */}
+                <p className="text-green-500 font-semibold">76% Off</p>
               </div>
 
               {/* Reviews */}
